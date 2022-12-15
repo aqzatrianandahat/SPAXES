@@ -22,7 +22,7 @@
   "detail": [
     {
       "nama": "Space Walk",
-      "capt": "Extravehicular activity is any activity done by an astronaut in outer space outside a spacecraft. Absent a breathable Earthlike atmosphere, the astronaut is completely reliant on a space suit for environmental support.",
+      "capt": "Extravehicular activity is any activity done by an astronaut in outer space outside a spacecraft. Absent a breathable Earthlike atmosphere, the astronaut is completely reliant on a space suit for environmental support. EVA includes spacewalks and lunar or planetary surface exploration.",
       "image": "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
       "id": 1
     },
@@ -39,9 +39,9 @@
       "id": 3
     },
     {
-      "nama": "First Moon Landing",
-      "capt": "Apollo 11 (July 16-24, 1969) was the American spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin landed the Apollo Lunar Module Eagle on July 20, 1969, at 20:17 UTC, and Armstrong became the first person to step onto the Moon's surface six hours and 39 minutes later, on July 21 at 02:56 UTC.",
-      "image": "https://images.unsplash.com/photo-1614726365930-627c75da663e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBvbGxvJTIwMTF8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+      "nama": "James Webb Space Telescope",
+      "capt": "The James Webb Space Telescope is a space telescope which conducts infrared astronomy. As the largest optical telescope in space, its high resolution and sensitivity allow it to view objects too old, distant, or faint for the Hubble Space Telescope.",
+      "image": "https://images.newscientist.com/wp-content/uploads/2021/09/13165709/pri199591609.jpg",
       "id": 4
     }
   ]

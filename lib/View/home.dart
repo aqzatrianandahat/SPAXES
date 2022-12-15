@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:uas_mobile/Model/space.dart';
 import 'package:uas_mobile/Services/SpaxesServices.dart';
 
+import 'login.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -23,14 +25,8 @@ class _homeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 73, 79, 115),
         elevation: 0,
-        title: const Text(
-          'HOME',
-          style: TextStyle(
-            color: Color.fromARGB(255, 245, 246, 248),
-            fontFamily: 'Poppins SemiBold',
-            fontSize: 16,
-          ),
-        ),
+        title: Image(
+            image: AssetImage("assets/images/Logo Name.png"), fit: BoxFit.fill),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -50,44 +46,61 @@ class _homeState extends State<Home> {
                 return Text(snapshot.error.toString());
               } else {
                 return GridView.builder(
+                    padding: EdgeInsets.all(5),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
-                      mainAxisSpacing: 1,
+                      mainAxisSpacing: 5,
                       childAspectRatio: 0.75,
                     ),
                     itemCount: snapshot.data!.length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
-                      return Column(children: [
-                        Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.network(snapshot.data![index].image),
-                                Text(
-                                  snapshot.data![index].nama,
-                                  style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                                const SizedBox(height: 15),
-                                Text(
-                                  snapshot.data![index].capt,
-                                  style: const TextStyle(
-                                    fontSize: 9,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
+                      return Container(
+                        width: 200,
+                        height: 350,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 245, 246, 248),
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 196, 196, 196)
+                                    .withOpacity(0.5),
+                                spreadRadius: 3,
+                                blurRadius: 10,
+                                offset: Offset(0, 3),
+                              )
+                            ]),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10.0),
+                              child: Image.network(snapshot.data![index].image),
                             ),
-                          ),
-                        )
-                      ]);
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 2),
+                              child: Text(
+                                snapshot.data![index].nama,
+                                style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 45, 50, 73)),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(5.0),
+                              child: Text(
+                                snapshot.data![index].capt,
+                                style: const TextStyle(
+                                  fontSize: 9,
+                                  color: Color.fromARGB(255, 45, 50, 73),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      );
                     });
               }
             }
@@ -144,8 +157,10 @@ class _homeState extends State<Home> {
               trailing: new Icon(Icons.cancel),
               title: const Text('LOGOUT'),
               onTap: () {
-                // Navigator.pushReplacement(context,
-                //   MaterialPageRoute(builder: (context) => LoginScreen(setTheme: setTheme)),);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
               },
             ),
           ],
