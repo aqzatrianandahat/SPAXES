@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uas_mobile/Model/space.dart';
 import 'package:uas_mobile/Services/SpaxesServices.dart';
+import 'package:uas_mobile/View/setting.dart';
 
+import 'desc.dart';
 import 'login.dart';
 
 class Home extends StatefulWidget {
@@ -135,20 +137,24 @@ class _homeState extends State<Home> {
               leading: Icon(Icons.settings),
               title: const Text('Settings'),
               onTap: () {
-                // Navigator.pop(context);
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => settingpage(setTheme: setTheme),
-                //     ));
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Setting(),
+                    ));
               },
             ),
             ListTile(
               leading: Icon(Icons.description),
               title: const Text('Description'),
               onTap: () {
-                // Navigator.pop(context);
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => homedetail(),
-                //     ));
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Desc(),
+                    ));
               },
             ),
             new Divider(),

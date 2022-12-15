@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../Services/SpaxesServices.dart';
 import 'home.dart';
 
-
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -30,7 +29,7 @@ class _LoginState extends State<Login> {
               child: Column(
                 children: const <Widget>[
                   Text(
-                    "Welcome Back",
+                    "Welcome To SPAXES",
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Poppins SemiBold',
@@ -38,6 +37,10 @@ class _LoginState extends State<Login> {
                       fontSize: 24,
                     ),
                   ),
+                  SizedBox(height: 3),
+                  Image(
+                      image: AssetImage("assets/images/Logo Name.png"),
+                      fit: BoxFit.fill),
                   SizedBox(height: 3),
                   Text("Login to your account",
                       style: TextStyle(
@@ -62,7 +65,7 @@ class _LoginState extends State<Login> {
                 labelText: "Email Address",
                 hintText: "Email Address",
                 contentPadding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                 hintStyle: const TextStyle(
                   fontFamily: 'Poppins Light',
                   fontSize: 16,
@@ -84,7 +87,7 @@ class _LoginState extends State<Login> {
                 labelText: "Password",
                 hintText: "Password",
                 contentPadding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                 hintStyle: const TextStyle(
                   fontFamily: 'Poppins Light',
                   fontSize: 16,
@@ -122,10 +125,8 @@ class _LoginState extends State<Login> {
                     id = username.data[0]['id'];
 
                     // ignore: use_build_context_synchronously
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Home()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Home()));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       backgroundColor: Colors.red,
@@ -140,10 +141,8 @@ class _LoginState extends State<Login> {
                     id = email.data[0]['id'];
 
                     // ignore: use_build_context_synchronously
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Home()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Home()));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       backgroundColor: Colors.red,
@@ -196,7 +195,7 @@ class _LoginState extends State<Login> {
                       style: TextStyle(
                         fontFamily: 'Poppins SemiBold',
                         fontSize: 16,
-                        color: Color.fromARGB(255, 73, 79, 115),
+                        color: Color.fromARGB(255, 45, 50, 73),
                       )),
                 ),
               ],
