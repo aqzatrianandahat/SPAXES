@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "username": "aqza",
+      "email": "aqza@gmail.com",
+      "password": "aqza",
+      "id": 1
+    },
+    {
+      "username": "ayam",
+      "password": "ayam",
+      "email": "ayam@gmail.com",
+      "id": 2
+    },
+    {
+      "username": "goreng",
+      "password": "goreng",
+      "email": "goreng@gmail.com",
+      "id": 3
+    }
+  ],
+  "detail": [
+    {
+      "nama": "Space Walk",
+      "capt": "Extravehicular activity is any activity done by an astronaut in outer space outside a spacecraft. Absent a breathable Earthlike atmosphere, the astronaut is completely reliant on a space suit for environmental support. EVA includes spacewalks and lunar or planetary surface exploration.",
+      "image": "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+      "id": 1
+    },
+    {
+      "nama": "Nebula",
+      "capt": "A nebula is a distinct luminescent part of interstellar medium, which can consist of ionized, neutral or molecular hydrogen and also cosmic dust. Nebulae are often star-forming regions, such as in the \"Pillars of Creation\" in the Eagle Nebula.",
+      "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=611&q=80",
+      "id": 2
+    },
+    {
+      "nama": "ISS",
+      "capt": "The International Space Station is a large spacecraft in orbit around Earth. It serves as a home where crews of astronauts and cosmonauts live. The space station is also a unique science laboratory. Several nations worked together to build and use the space station.",
+      "image": "https://images.unsplash.com/photo-1614314007212-0257d6e2f7d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "id": 3
+    },
+    {
+      "nama": "James Webb Space Telescope",
+      "capt": "The James Webb Space Telescope is a space telescope which conducts infrared astronomy. As the largest optical telescope in space, its high resolution and sensitivity allow it to view objects too old, distant, or faint for the Hubble Space Telescope.",
+      "image": "https://images.newscientist.com/wp-content/uploads/2021/09/13165709/pri199591609.jpg",
+      "id": 4
+    }
+  ]
+}
