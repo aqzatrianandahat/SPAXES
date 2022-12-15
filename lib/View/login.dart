@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:uas_mobile/View/register.dart';
 
 import '../Services/SpaxesServices.dart';
 import 'home.dart';
@@ -31,7 +32,7 @@ class _LoginState extends State<Login> {
                   Text(
                     "Welcome To SPAXES",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 45, 50, 73),
                       fontFamily: 'Poppins SemiBold',
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
@@ -44,7 +45,7 @@ class _LoginState extends State<Login> {
                   SizedBox(height: 3),
                   Text("Login to your account",
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Color.fromARGB(255, 45, 50, 73),
                         fontSize: 17,
                         fontFamily: 'Poppins Light',
                       )),
@@ -187,9 +188,9 @@ class _LoginState extends State<Login> {
                 const SizedBox(width: 7),
                 GestureDetector(
                   onTap: () {
-                    // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    //   builder: (context) => const Register(),
-                    // ));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const Register(),
+                    ));
                   },
                   child: const Text("Sign up",
                       style: TextStyle(
