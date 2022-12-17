@@ -1,15 +1,15 @@
-class Space {
+class Detail {
   final String nama, capt, image;
   final int id;
 
-  Space(
+  Detail(
       {required this.nama,
-        required this.capt,
-        required this.image,
-        required this.id});
+      required this.capt,
+      required this.image,
+      required this.id});
 
-  factory Space.fromJSON(Map parsedJson) {
-    return Space(
+  factory Detail.fromJSON(Map parsedJson) {
+    return Detail(
         id: parsedJson['id'],
         nama: parsedJson['nama'],
         capt: parsedJson['capt'],

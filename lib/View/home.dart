@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:uas_mobile/Model/space.dart';
+import 'package:uas_mobile/Model/detail.dart';
 import 'package:uas_mobile/Services/SpaxesServices.dart';
 import 'package:uas_mobile/View/setting.dart';
 
 import 'desc.dart';
+import 'detailSpace.dart';
 import 'login.dart';
 
 class Home extends StatefulWidget {
@@ -16,12 +17,6 @@ class Home extends StatefulWidget {
 class _homeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    List<String> images = [
-      "assets/images/Moon HD.png",
-      "assets/images/Nebula.png",
-      "assets/images/Spacewalk.png",
-      "assets/images/Spacewalk 2.png",
-    ];
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 196, 196, 196),
       appBar: AppBar(
@@ -38,7 +33,7 @@ class _homeState extends State<Home> {
           ),
         ],
       ),
-      body: FutureBuilder<List<Space>>(
+      body: FutureBuilder<List<Detail>>(
           future: SpaxesService().fetchUser(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -59,48 +54,61 @@ class _homeState extends State<Home> {
                     itemCount: snapshot.data!.length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
-                      return Container(
-                        width: 200,
-                        height: 350,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 245, 246, 248),
-                            borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(255, 196, 196, 196)
-                                    .withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(0, 3),
-                              )
-                            ]),
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.network(snapshot.data![index].image),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 2),
-                              child: Text(
-                                snapshot.data![index].nama,
-                                style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 45, 50, 73)),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailSpace(
+                                        detail: snapshot.data![index],
+                                        fetchdetail:
+                                            SpaxesService().fetchUser(),
+                                      )));
+                        },
+                        child: Container(
+                          width: 200,
+                          height: 350,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 245, 246, 248),
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromARGB(255, 196, 196, 196)
+                                      .withOpacity(0.5),
+                                  spreadRadius: 3,
+                                  blurRadius: 10,
+                                  offset: Offset(0, 3),
+                                )
+                              ]),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10.0),
+                                child:
+                                    Image.network(snapshot.data![index].image),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: Text(
-                                snapshot.data![index].capt,
-                                style: const TextStyle(
-                                  fontSize: 9,
-                                  color: Color.fromARGB(255, 45, 50, 73),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 2),
+                                child: Text(
+                                  snapshot.data![index].nama,
+                                  style: const TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 45, 50, 73)),
                                 ),
                               ),
-                            )
-                          ],
+                              Padding(
+                                padding: EdgeInsets.all(5.0),
+                                child: Text(
+                                  snapshot.data![index].capt,
+                                  style: const TextStyle(
+                                    fontSize: 9,
+                                    color: Color.fromARGB(255, 45, 50, 73),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     });
